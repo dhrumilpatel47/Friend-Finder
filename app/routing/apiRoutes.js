@@ -9,10 +9,8 @@ module.exports = function (app) {
     app.post('/api/friends', function (req, res) {
         var input = req.body;
         var responses = input.scores;
-        var yourFriend = "";
-        var yourFriendImage = "",
         var differance = 1000;
-        
+        var yourFriend = "";
         
         for (var i = 0; i < friends.length; i++) {
             var totalDifference = 0;
@@ -22,7 +20,6 @@ module.exports = function (app) {
             if (totalDifference < differance) {
                 differance = totalDifference;
                 yourFriend = friends[i].name;
-                yourFriendImage= friends[i].name;
             }
         }
         
